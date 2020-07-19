@@ -37,7 +37,6 @@
 /// ---
 
 import 'package:flutter/foundation.dart';
-import 'package:decimal/decimal.dart';
 
 /// [MoneyFormatterCompare] instance.
 ///
@@ -45,20 +44,20 @@ import 'package:decimal/decimal.dart';
 class MoneyFormatterCompare {
   MoneyFormatterCompare({@required this.amount});
 
-  final Decimal amount;
+  final double amount;
 
   /// Check current instance amount is lower than [amount] or not
-  bool isLowerThan(Decimal amount) => this.amount < amount;
+  bool isLowerThan(double amount) => this.amount < amount;
 
   /// Check current instance amount is greater than [amount] or not
-  bool isGreaterThan(Decimal amount) => this.amount > amount;
+  bool isGreaterThan(double amount) => this.amount > amount;
 
   /// Check current instance amount is equal than [amount] or not
-  bool isEqual(Decimal amount) => this.amount == amount;
+  bool isEqual(double amount) => this.amount == amount;
 
   /// Check current instance amount is equal or lower than [amount] or not
-  bool isEqualOrLowerThan(Decimal amount) => this.amount <= amount;
+  bool isEqualOrLowerThan(double amount) => this.amount <= amount;
 
   /// Check current instance amount is equal or greater than [amount] or not
-  bool isEqualOrGreaterThan(Decimal amount) => this.amount >= amount;
+  bool isEqualOrGreaterThan(double amount) => this.amount >= amount;
 }

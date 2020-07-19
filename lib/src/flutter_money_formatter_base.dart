@@ -38,7 +38,6 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:intl/intl.dart';
-import 'package:decimal/decimal.dart';
 
 import 'package:flutter_money_formatter/src/utils/compact_format_type.dart';
 import 'package:flutter_money_formatter/src/utils/money_formatter_settings.dart';
@@ -61,7 +60,7 @@ class FlutterMoneyFormatter {
   }
 
   /// Amount number that will be formatted.
-  Decimal amount;
+  double amount;
 
   /// The formatter settings
   MoneyFormatterSettings settings;
@@ -96,7 +95,7 @@ class FlutterMoneyFormatter {
 
   /// returns FlutterMoneyFormatter after calculating amount.
   FlutterMoneyFormatter fastCalc(
-      {@required FastCalcType type, @required Decimal amount}) {
+      {@required FastCalcType type, @required double amount}) {
     switch (type) {
       case FastCalcType.addition:
         this.amount += amount;
@@ -115,11 +114,11 @@ class FlutterMoneyFormatter {
         break;
 
       case FastCalcType.percentageAddition:
-        this.amount += (amount / Decimal.fromInt(100)) * this.amount;
+        this.amount += (amount / 100) * this.amount;
         break;
 
       case FastCalcType.percentageSubstraction:
-        this.amount -= (amount / Decimal.fromInt(100)) * this.amount;
+        this.amount -= (amount / 100) * this.amount;
         break;
 
       default:
