@@ -61,7 +61,7 @@ class _Utilities {
           symbol: '',
           decimalDigits: this.settings.fractionDigits,
           locale: 'en_US')
-      .format(amount.toDouble());
+      .format(amount);
 
   /// Returns formatted number with refined separator chars
   String get refineSeparator => baseFormat
