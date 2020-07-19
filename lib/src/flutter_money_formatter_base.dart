@@ -131,7 +131,7 @@ class FlutterMoneyFormatter {
 
   /// Copies current instance and change some values to the new instance.
   FlutterMoneyFormatter copyWith(
-      {Decimal amount,
+      {double amount,
       String symbol,
       String thousandSeparator,
       String decimalSeparator,
@@ -154,7 +154,7 @@ class FlutterMoneyFormatter {
 
   /// Returns compact format number without currency symbol
   String get _compactNonSymbol {
-    String compacted = _utilities.baseCompact.format(amount.toDouble());
+    String compacted = _utilities.baseCompact.format(amount);
     String numerics = RegExp(r'(\d+\.\d+)|(\d+)')
         .allMatches(compacted)
         .map((_) => _.group(0))
