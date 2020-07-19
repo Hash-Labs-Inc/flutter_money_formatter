@@ -52,7 +52,7 @@ class _Utilities {
     this.settings = settings ?? MoneyFormatterSettings();
   }
 
-  Decimal amount;
+  double amount;
 
   MoneyFormatterSettings settings;
 

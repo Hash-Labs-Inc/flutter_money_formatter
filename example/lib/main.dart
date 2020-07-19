@@ -4,7 +4,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_money_formatter/flutter_money_formatter.dart';
-import 'package:decimal/decimal.dart';
 
 void main() => runApp(MyApp());
 
@@ -20,7 +19,7 @@ class _MyAppState extends State<MyApp> {
         TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold);
     TextStyle subtitleStyle = TextStyle(fontSize: 20.0);
 
-    FlutterMoneyFormatter fmf = FlutterMoneyFormatter(amount: Decimal.parse('12345678.9012345'));
+    FlutterMoneyFormatter fmf = FlutterMoneyFormatter(amount: 12345678.9012345);
 
     MoneyFormatterOutput fo = fmf.output;
 
@@ -176,7 +175,7 @@ class _MyAppState extends State<MyApp> {
                           style: titleStyle,
                         ),
                         subtitle: Text(
-                          '${FlutterMoneyFormatter(amount: Decimal.parse('12345.678')).fastCalc(type: FastCalcType.addition, amount: Decimal.parse('1.111')).fastCalc(type: FastCalcType.substraction, amount: Decimal.parse('2.222')).output.nonSymbol}',
+                          '${FlutterMoneyFormatter(amount: 12345.678).fastCalc(type: FastCalcType.addition, amount: 1.111).fastCalc(type: FastCalcType.substraction, amount: 2.222).output.nonSymbol}',
                           style: subtitleStyle,
                         ),
                       ),
@@ -186,7 +185,7 @@ class _MyAppState extends State<MyApp> {
                           style: titleStyle,
                         ),
                         subtitle: Text(
-                          '${fmf.fastCalc(type: FastCalcType.addition, amount: Decimal.parse('1234.567')).fastCalc(type: FastCalcType.substraction, amount: Decimal.parse('234.5678')).output.nonSymbol}',
+                          '${fmf.fastCalc(type: FastCalcType.addition, amount: 1234.567).fastCalc(type: FastCalcType.substraction, amount: 234.5678).output.nonSymbol}',
                           style: subtitleStyle,
                         ),
                       ),
@@ -196,7 +195,7 @@ class _MyAppState extends State<MyApp> {
                           style: titleStyle,
                         ),
                         subtitle: Text(
-                          '${fmf.comparator.isEqual(Decimal.fromInt(5000))}',
+                          '${fmf.comparator.isEqual(5000)}',
                           style: subtitleStyle,
                         ),
                       )
